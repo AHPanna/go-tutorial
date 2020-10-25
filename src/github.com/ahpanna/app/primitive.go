@@ -45,4 +45,10 @@ func main() {
 	b := []byte(s)
 	fmt.Printf("%v , %T\n", b, b)
 
+	// rune shit
+	const var1 = "Hello"
+	for index, runeValue := range var1 {
+		fmt.Printf("the rune : %v : %#U starts at byte position %d\n", runeValue, runeValue, index)
+	}
+
 }
