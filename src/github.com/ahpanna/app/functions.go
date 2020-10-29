@@ -41,6 +41,11 @@ func main() {
 		fmt.Println("i am a function inside of variable")
 	} // no () for calling
 	f()
+
+	// function methods type:
+	p := &Person{"azures", 21}
+	//p = p.withName("Azures").withAge(21)
+	fmt.Println(*p)
 }
 
 func customFunc(str string, i int) {
@@ -69,5 +74,19 @@ func errorCheck(a, b string) (string, error) { // the second parenthese show wha
 	} else {
 		return "Wtf", fmt.Errorf("Wtf bro?")
 	}
+}
 
+type Person struct {
+	Name string
+	Age  int
+}
+
+func (p *Person) withName(name string) *Person {
+	p.Name = name
+	return p
+}
+
+func (p *Person) withAge(age int) *Person {
+	p.Age = age
+	return p
 }
