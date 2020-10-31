@@ -12,6 +12,9 @@ func display(str string) {
 	}
 }
 
+/**
+ * Goroutines execute independently and simultaneously(view this as a thread)
+ */
 func main() {
 
 	// Calling Goroutine
@@ -24,11 +27,10 @@ func main() {
 
 	// Creating Anonymous Goroutine
 	go func() {
-
 		fmt.Println("Welcome!! to Azures")
 	}()
 
-	time.Sleep(1 * time.Second)
+	time.Sleep(1 * time.Second) // let the other goroutine time for execute.
 	fmt.Println("GoodBye!! to Main function")
 }
 
